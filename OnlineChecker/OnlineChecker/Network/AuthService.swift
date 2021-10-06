@@ -48,6 +48,10 @@ class AuthService {
         task.resume()
         return task
     }
+    
+    static func checkUser(login: String) -> String {
+        return login
+    }
 
     
 }

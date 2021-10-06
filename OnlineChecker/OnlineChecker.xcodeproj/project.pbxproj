@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501B4D7A270E33D1005028EF /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B4D79270E33D1005028EF /* UsersTableViewController.swift */; };
+		501B4D7C270E3502005028EF /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B4D7B270E3502005028EF /* UsersTableViewCell.swift */; };
 		50358D52270CF4FD005633ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50358D51270CF4FD005633ED /* AppDelegate.swift */; };
 		50358D54270CF4FD005633ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50358D53270CF4FD005633ED /* SceneDelegate.swift */; };
 		50358D56270CF4FD005633ED /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50358D55270CF4FD005633ED /* MainViewController.swift */; };
@@ -25,6 +27,8 @@
 		43F03B361B698E9729984DE7 /* Pods-OnlineChecker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineChecker.debug.xcconfig"; path = "Target Support Files/Pods-OnlineChecker/Pods-OnlineChecker.debug.xcconfig"; sourceTree = "<group>"; };
 		4416179B1A526C3449B86EE8 /* Pods-OnlineChecker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineChecker.release.xcconfig"; path = "Target Support Files/Pods-OnlineChecker/Pods-OnlineChecker.release.xcconfig"; sourceTree = "<group>"; };
 		4548C94628DBAD3C6D0F2042 /* Pods_OnlineChecker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineChecker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		501B4D79270E33D1005028EF /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		501B4D7B270E3502005028EF /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		50358D4E270CF4FD005633ED /* OnlineChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50358D51270CF4FD005633ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50358D53270CF4FD005633ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +56,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		501B4D76270E3395005028EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				501B4D78270E33AD005028EF /* Cell */,
+				501B4D77270E33A3005028EF /* Alert */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		501B4D77270E33A3005028EF /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		501B4D78270E33AD005028EF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				501B4D7B270E3502005028EF /* UsersTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		50358D45270CF4FD005633ED = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +104,7 @@
 				50358D66270CF572005633ED /* Application */,
 				50358D6F270D026F005633ED /* Network */,
 				50358D67270CF6D0005633ED /* Controllers */,
+				501B4D76270E3395005028EF /* Model */,
 				50358D68270CF7DB005633ED /* Extension */,
 				50358D65270CF555005633ED /* Resources */,
 			);
@@ -105,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				50358D55270CF4FD005633ED /* MainViewController.swift */,
+				501B4D79270E33D1005028EF /* UsersTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -267,7 +297,9 @@
 				50358D6E270CFA72005633ED /* UITextField.swift in Sources */,
 				50358D71270D0286005633ED /* NetworkService.swift in Sources */,
 				504AF4B0270D067500141557 /* AuthParser.swift in Sources */,
+				501B4D7A270E33D1005028EF /* UsersTableViewController.swift in Sources */,
 				504AF4AE270D03FD00141557 /* AuthService.swift in Sources */,
+				501B4D7C270E3502005028EF /* UsersTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

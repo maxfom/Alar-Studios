@@ -9,22 +9,50 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    
     let loginLabel = UILabel(text: "Login:", font: .AvenirNext14(), aligment: .left)
     lazy var loginField = UITextField(placeholder: "Enter your login", keyboardType: .default, font: .AvenirNextDemiBold14())
     let passwordLabel = UILabel(text: "Password:", font: .AvenirNext14(), aligment: .left)
     lazy var passwordField = UITextField(placeholder: "Enter your password", keyboardType: .default, font: .AvenirNextDemiBold14())
-
-
-    
+        
+    let loginButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Log in", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
+        button.titleLabel?.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         view.backgroundColor = .white
         setConstraints()
         passwordField.isSecureTextEntry = true
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
+    @objc func loginButtonTapped() {
+        if loginField.hasText && passwordField.hasText {
+            guard let user = loginField.text else { return }
+            userAuthorize(login: user)
+            pushControllers(vc: UsersTableViewController())
+            print(user)
+        }
+        else {
+            print("Input symbols")
+        }
+    }
+    
+    func userAuthorize(login: String) {
+        AuthService.checkUser(login: login)
+    }
+    
+    func pushControllers(vc: UIViewController) {
+        let viewController = vc
+        self.show(viewController, sender: MainViewController())
+    }
 }
 
 
@@ -63,6 +91,14 @@ extension MainViewController {
             passwordField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
             passwordField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
             passwordField.heightAnchor.constraint(equalToConstant: 35)
+        ])
+        
+        view.addSubview(loginButton)
+        NSLayoutConstraint.activate([
+            loginButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 30),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
+            loginButton.heightAnchor.constraint(equalToConstant: 44),
         ])
         
     }
